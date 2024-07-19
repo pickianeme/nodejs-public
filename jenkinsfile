@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage("verfify Tool")  {
+            steps {
+                sh '''
+                    docker info
+                    docker version
+                    docker compose version
+                    curl --version
+                '''            
+            }
+        }
+    }
+}
